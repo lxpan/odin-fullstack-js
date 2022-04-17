@@ -1,0 +1,1 @@
+This repository contains code snippets and exercises from The Odin Project's Fullstack JavaScript path.
