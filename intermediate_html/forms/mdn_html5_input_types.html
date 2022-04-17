@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="">
+        <fieldset>
+            <input type="search" name="search" id="search">
+            <input type="tel" name="tel" id="tel">
+            <input type="url" name="url" id="url">
+            <input type="number" name="change" id="pennies" min="0" max="1" step="0.01">
+            <button type="submit">Submit Button</button>
+        </fieldset>
+        <fieldset>
+            <label for="price">Choose a maximum house price: </label>
+            <input type="range" name="price" id="price" min="50000" max="500000" step="100" value="250000">
+            <output class="price-output" for="price"></output>
+        </fieldset>
+        <fieldset>
+            <input type="datetime-local" name="datetime" id="datetime">
+            <input type="month" name="month" id="month">
+            <input type="time" name="time" id="time">
+            <input type="week" name="week" id="week">
+            <br>
+            <label for="myDate">When are you available this summer?</label>
+            <input type="date" name="myDate" min="2013-06-01" max="2013-08-31" step="7" id="myDate">
+            <br>
+            <input type="color" name="color" id="color">
+        </fieldset>
+    </form>
+
+    <script>
+        const price = document.querySelector('#price');
+        const output = document.querySelector('.price-output');
+        output.textContent = price.value;
+        price.addEventListener('input', () => output.textContent = price.value);
+    </script>
+</body>
+
+</html>
