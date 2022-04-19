@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 20px auto;
+            max-width: 460px;
+        }
+
+        fieldset {
+            padding: 10px 30px 0;
+        }
+
+        legend {
+            color: white;
+            background: black;
+            padding: 5px 10px;
+        }
+
+        /* make each parent div a flex container and have it wrap contents onto new lines if content too long 
+           effect: <span> can now sit on the same lane as the <input> */
+        fieldset>div {
+            margin-bottom: 20px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        button,
+        label,
+        input {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+        }
+
+        input+span {
+            position: relative;
+        }
+
+        input:required+span:after {
+            font-size: 0.7rem;
+            position: absolute;
+            content: "required";
+            color: white;
+            background-color: black;
+            padding: 5px 10px;
+            top: -26px;
+            left: -70px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Feedback form</legend>
+            <p>Required fields are labelled with "required".</p>
+            <div>
+                <label for="fname">First name: </label>
+                <input type="text" id="fname" name="fname" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="lname">Last name: </label>
+                <input type="text" id="lname" name="lname" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="email">Email address (include if you want a response): </label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
