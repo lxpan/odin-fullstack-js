@@ -100,6 +100,18 @@ body {
         width: 250px;
         height: initial;
     }
+
+    .legacy-form-row {
+        margin-bottom: 10px;
+    }
+    .legacy-form-row legend {
+        width: 120px;
+        text-align: right;
+        padding-right: 20px;
+    }
+    .legacy-form-row legend {
+        float: left;
+    }
 }
 
 .form-row input[type='text']:invalid,
@@ -108,4 +120,28 @@ body {
     color: #D55C5F;
     box-shadow: none;
     /* Remove default red glow in Firefox */
+}
+
+.legacy-form-row {
+    border: none;
+    margin-bottom: 40px;
+}
+
+.legacy-form-row legend {
+    margin-bottom: 15px;
+}
+
+.legacy-form-row .radio-label {
+    display: block;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+}
+
+.legacy-form-row input[type="radio"] {
+    margin-top: 2px;
+}
+
+.legacy-form-row .radio-label,
+.legacy-form-row input[type="radio"] {
+    float: left;
 }
