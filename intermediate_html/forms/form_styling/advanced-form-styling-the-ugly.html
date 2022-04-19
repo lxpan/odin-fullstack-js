@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        select {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 1rem;
+            top: 6px;
+            right: 10px;
+            position: absolute;
+        }
+
+        /* Replace default slider track with a thin red track (custom style) */
+        input[type="range"] {
+            appearance: none;
+            -webkit-appearance: none;
+            background: red;
+            height: 2px;
+            padding: 0;
+            outline: 1px solid transparent;
+        }
+
+        input[type="color"] {
+            border: 0;
+            padding: 0;
+        }
+
+        input[type="file"] {
+            height: 0;
+            padding: 0;
+            opacity: 0;
+        }
+
+        label[for="file"] {
+            box-shadow: 1px 1px 3px #ccc;
+            background: linear-gradient(to bottom, #eee, #ccc);
+            border: 1px solid rgb(169, 169, 169);
+            border-radius: 5px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        label[for="file"]:hover {
+            background: linear-gradient(to bottom, #fff, #ddd);
+        }
+
+        label[for="file"]:active {
+            box-shadow: inset 1px 1px 3px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="select-wrapper">
+        <select id="select" name="select">
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Lemon</option>
+        </select>
+    </div>
+
+    <input type="range" name="" id="">
+    <br>
+    <input type="color" name="" id="">
+    <br>
+    <input type="file" name="file" id="file">
+</body>
+
+</html>
