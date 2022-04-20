@@ -25,22 +25,26 @@
             left: 20px;
         }
 
+        /* Hides the label when selected */
         form>div>input[type="text"]:focus + label {
             opacity: 0;
+        }
+
+        input[type="text"] {
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
     <form action="#0" method="post">
-
         <div>
             <input type="text" id="first_name" name="first_name">
             <label for="first_name">First Name</label>
         </div>
 
-        <!-- ... --->
-
+        <div><input id="email" name="email" required="" type="email"></div>
+        <button>Submit</button>
     </form>
 </body>
 
