@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        form {
+            max-width: 450px;
+        }
+
+        /* positioning context */
+        form>div {
+            position: relative;
+        }
+
+        /* Looks like placeholder */
+        form>div>label {
+            opacity: 0.3;
+            position: absolute;
+            top: 22px;
+            left: 20px;
+        }
+
+        form>div>input[type="text"]:focus + label {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#0" method="post">
+
+        <div>
+            <input type="text" id="first_name" name="first_name">
+            <label for="first_name">First Name</label>
+        </div>
+
+        <!-- ... --->
+
+    </form>
+</body>
+
+</html>
