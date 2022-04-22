@@ -19,21 +19,6 @@
             border: .1em dotted red;
             height: 50px;
         }
-
-        /* This rule will only select the div with the class child group2 */
-        .group1 + div::after {
-            content: "Hey I'm adjacent (and after) to group1!";
-        }
-
-        /* This rule will only select the div with the class child group3 */
-        .group1 + div + div::after {
-            content: "Hey I'm adjacent (and after) to group2!";
-        }
-
-        /* Selects all of group1's div siblings (elements on the same level) */
-        .group1 ~ div {
-            background-color: aqua;
-        }
     </style>
 </head>
 
