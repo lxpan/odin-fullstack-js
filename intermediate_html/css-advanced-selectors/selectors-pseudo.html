@@ -42,6 +42,19 @@
         .group2 + div:hover {
             background-color: aqua;
         }
+
+        :root {
+            font-size: 20px;
+        }
+
+        /* first-child is <a> element, while last-child is <div> element */
+        .group2:first-child {
+            background-color: blueviolet;
+        }
+
+        .group3:empty {
+            background-color: aqua;
+        }
     </style>
 </head>
 
