@@ -17,6 +17,14 @@
             border: .1em dotted red;
             height: 50px;
         }
+
+        .group1 + div::after {
+            content: "Hey I'm adjacent (and after) to group1!";
+        }
+
+        .group1 + div + div::after {
+            content: "Hey I'm adjacent (and after) to group2!";
+        }
     </style>
 </head>
 
