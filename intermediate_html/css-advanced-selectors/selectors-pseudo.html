@@ -29,10 +29,18 @@
         a:link {
             color: chartreuse;
         }
-        
+
         /* :visited applies to visited links */
         a:visited {
             color: orange;
+        }
+
+        .group1 + div:active {
+            background-color: orangered;
+        }
+
+        .group2 + div:hover {
+            background-color: aqua;
         }
     </style>
 </head>
