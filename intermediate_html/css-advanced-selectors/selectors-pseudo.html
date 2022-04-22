@@ -55,6 +55,11 @@
         .group3:empty {
             background-color: aqua;
         }
+        
+        /* works on a sibling level */
+        .module:nth-child(2n) {
+            color: red;
+        }
     </style>
 </head>
 
@@ -72,6 +77,14 @@
             <div class="grand-child group3"></div>
         </div>
     </main>
+
+    <section class="grid">
+        <article class="module">One</article>
+        <article class="module">Two</article>
+        <article class="module">Three</article>
+        <article class="module">Four</article>
+        <article class="module">Five</article>
+      </section>
 </body>
 
 </html>
