@@ -66,16 +66,29 @@
             width: 20%;
         }
 
-
+        /* targets all img tags that have src with "cat.jpg" */
         img[src="cat.jpg"] {
             width: 30%;
+        }
+
+        /* Targets any img with src attribute containing 'at' anywhere */
+        img[src*='at'] {
+            width: 20%;
+        }
+
+        /* Targets any class that starts with 'pet' */
+        [class^='pet'] {
+            border: 3px dotted black;
         }
     </style>
 </head>
 
 <body>
-    <img src="puppy.jpg" alt="">
-    <img src="cat.jpg" alt="">
+    
+    <div class="petContainer">
+        <img src="puppy.jpg" alt="">
+        <img src="cat.jpg" alt="">
+    </div>
 
     <ul class="myList">
         <li>1</li>
