@@ -48,6 +48,14 @@
             color: red;
             font-weight: bold;
         }
+
+        .emojify::before {
+            content: '😎 🥸 🤓';
+        }
+
+        .emojify::after {
+            content: '🤓 🥸 😎';
+        }
     </style>
 </head>
 
@@ -63,7 +71,7 @@
     </ul>
 
     <ol>
-        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem <span class="emojify">ipsum</span> dolor sit amet.</li>
         <li>Corporis aliquam excepturi neque deleniti.</li>
         <li>Incidunt eos repellendus vitae deserunt!</li>
     </ol>
