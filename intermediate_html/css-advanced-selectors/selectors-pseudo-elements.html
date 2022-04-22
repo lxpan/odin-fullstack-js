@@ -8,6 +8,10 @@
     <title>Pseudo-selectors</title>
     
     <style>
+        :root {
+            font-size: 20px;
+        }
+
         /* This rule will only select divs with a class of child */
         main > div {
             border: 0.1em solid black;
@@ -34,6 +38,16 @@
         a:visited {
             color: orange;
         }
+
+        .myList li::marker {
+            font-size: 150%;
+            color: lightgreen;
+        }
+
+        ol li::marker {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -52,5 +66,20 @@
         </div>
     </main>
 </body>
+
+<ul class="myList">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+<ol>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Corporis aliquam excepturi neque deleniti.</li>
+    <li>Incidunt eos repellendus vitae deserunt!</li>
+</ol>
 
 </html>
