@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pseudo-selectors</title>
-    
+
     <style>
         :root {
             font-size: 20px;
         }
 
         /* This rule will only select divs with a class of child */
-        main > div {
+        main>div {
             border: 0.1em solid black;
             height: 100px;
         }
 
         /* This rule will only select divs with a class of grand-child */
-        main > div > div {
+        main>div>div {
             border: .1em dotted red;
             height: 50px;
         }
@@ -52,34 +52,21 @@
 </head>
 
 <body>
-    <h1>Pseudo-selectors</h1>
-    <main class="parent">
-        <div class="child group1">
-            <a href="selectors-pseudo.html">Link!</a>
-            <div class="grand-child group1"></div>
-        </div>
-        <div class="child group2">
-            <div class="grand-child group2"></div>
-        </div>
-        <div class="child group3">
-            <div class="grand-child group3"></div>
-        </div>
-    </main>
+
+    <ul class="myList">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+
+    <ol>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Corporis aliquam excepturi neque deleniti.</li>
+        <li>Incidunt eos repellendus vitae deserunt!</li>
+    </ol>
 </body>
-
-<ul class="myList">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-</ul>
-
-<ol>
-    <li>Lorem ipsum dolor sit amet.</li>
-    <li>Corporis aliquam excepturi neque deleniti.</li>
-    <li>Incidunt eos repellendus vitae deserunt!</li>
-</ol>
 
 </html>
