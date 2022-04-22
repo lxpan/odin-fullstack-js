@@ -8,20 +8,24 @@
     <title>Document</title>
     
     <style>
+        /* This rule will only select divs with a class of child */
         main > div {
             border: 0.1em solid black;
             height: 100px;
         }
 
+        /* This rule will only select divs with a class of grand-child */
         main > div > div {
             border: .1em dotted red;
             height: 50px;
         }
 
+        /* This rule will only select the div with the class child group2 */
         .group1 + div::after {
             content: "Hey I'm adjacent (and after) to group1!";
         }
 
+        /* This rule will only select the div with the class child group3 */
         .group1 + div + div::after {
             content: "Hey I'm adjacent (and after) to group2!";
         }
