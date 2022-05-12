@@ -1,10 +1,10 @@
-let animal = {
-    jumps: null
-};
-let rabbit = {
-    __proto__: animal,
-    jumps: true
-};
+// let animal = {
+//     jumps: null
+// };
+// let rabbit = {
+//     __proto__: animal,
+//     jumps: true
+// };
 
 
 function runExercise1() {
@@ -59,4 +59,4 @@ let rabbit = {
     __proto__: animal
 };
 
-rabbit.eat();
+rabbit.eat(); // rabbit receives the property when .eat() is called (this = rabbit because rabbit is before the .)
