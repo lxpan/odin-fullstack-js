@@ -1,19 +1,24 @@
-let myModule = (function() {
-    'use strict'; // run in ES5 strict mode
-    // Your code here
-    // All function and variables are scoped to this function
-    let _privateProperty = 'Hello World';
+var myModule = (function() {
+  'use strict';
 
-    function _privateMethod() {
-        console.log(_privateProperty);
-    }
+  var _privateProperty = 'Hello World';
+  var publicProperty = 'I am a public property';
 
+  function _privateMethod() {
+    console.log(_privateProperty);
+  }
 
-    return {
-        publicMethod: function() {
-          _privateMethod();
-        }
-      };
-  })();
+  function publicMethod() {
+    _privateMethod();
+  }
 
-myModule.publicMethod();
+  return {
+    publicMethod: publicMethod,
+    publicProperty: publicProperty
+  };
+})();
+
+myModule.publicMethod(); // outputs 'Hello World'
+console.log(myModule.publicProperty); // outputs 'I am a public property'
+console.log(myModule._privateProperty); // is undefined protected by the module closure
+myModule._privateMethod(); // is TypeError protected by the module closure
