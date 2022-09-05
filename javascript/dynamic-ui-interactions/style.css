@@ -30,10 +30,6 @@ body {
     background-color: var(--menu-stub-triline-color);
 }
 
-.hidden {
-    
-}
-
 .menu-content {
     width: 100px;
     display: flex;
@@ -47,4 +43,38 @@ body {
 .menu-content a a:visited, a:link {
     text-decoration: none;
     color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.expand {
+    display: flex;
+    animation: dropDown 0.3s;
+}
+
+.contract {
+    display: none;
+    animation: dropUp 0.3s;
+}
+
+@keyframes dropDown {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes dropUp {
+    0% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
 }
