@@ -31,5 +31,20 @@ body {
 }
 
 .hidden {
-    display: none;
+    
+}
+
+.menu-content {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--menu-stub-background-color);
+    color: white;
+}
+
+.menu-content a a:visited, a:link {
+    text-decoration: none;
+    color: white;
 }
