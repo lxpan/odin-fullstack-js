@@ -29,3 +29,7 @@ body {
     width: calc(var(--menu-stub-width) - 10px);
     background-color: var(--menu-stub-triline-color);
 }
+
+.hidden {
+    display: none;
+}
