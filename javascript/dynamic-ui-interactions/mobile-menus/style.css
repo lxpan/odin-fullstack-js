@@ -24,7 +24,7 @@ body {
 
 nav {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-top: 40px;
     height: 3rem;
     background-color: lightgray;
@@ -57,4 +57,56 @@ nav a:hover {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid black;
+}
+
+.menu-content {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--menu-stub-background-color);
+    color: white;
+}
+
+.menu-content a a:visited, a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.expand {
+    display: flex;
+    animation: dropDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+.contract {
+    display: flex;
+    animation: dropUp 300ms ease-in-out backwards;
+    transform-origin: top center;
+    animation-fill-mode: forwards;
+}
+
+@keyframes dropDown {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes dropUp {
+    0% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Mobile Menu</h1>
     <div class="mobile-container">
@@ -17,9 +19,19 @@
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#photos">Photos</a></li>
                 <li><a href="#chat">Chat</a></li>
-                <li><a href="#more">More<span class="arrow-up"></span></a></li>
+                <li><a href="#more" class="menu-stub">More<span class="arrow-up"></span>
+                        <div class="menu-content hidden">
+                            <a href="#" class="menu-link">Link 1</a>
+                            <a href="#" class="menu-link">Link 2</a>
+                            <a href="#" class="menu-link">Link 3</a>
+                            <a href="#" class="menu-link">Link 4</a>
+                            <a href="#" class="menu-link">Link 5</a>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
 </body>
+
 </html>
