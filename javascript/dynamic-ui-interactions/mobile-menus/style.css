@@ -1,0 +1,52 @@
+:root {
+    --menu-stub-width: 50px;
+    --menu-stub-height: 30px;
+    --menu-stub-background-color: teal;
+    --menu-stub-triline-color: whitesmoke;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mobile-container {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    border: solid 1px black;
+    border-radius: 12px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    height: 3rem;
+    background-color: lightgray;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: slategray;
+}
+
+nav a:hover {
+    color: black;
+}
