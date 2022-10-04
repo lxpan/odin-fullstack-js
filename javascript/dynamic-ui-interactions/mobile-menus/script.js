@@ -7,11 +7,8 @@ function createDropDown(stub, content) {
             dropdownContent.classList.remove("hidden");
             dropdownContent.classList.add("expand");
             // console.log(dropdownContent);
-        } else if (dropdownContent.classList.contains("contract")) {
-            dropdownContent.classList.toggle("contract");
-    
-        }
-        
+        } 
+
         else {
             dropdownContent.classList.toggle("expand");
             dropdownContent.classList.toggle("contract");
