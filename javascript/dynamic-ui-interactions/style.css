@@ -56,8 +56,10 @@ body {
 }
 
 .contract {
-    display: none;
-    animation: dropUp 0.3s;
+    display: flex;
+    animation: dropUp 300ms ease-in-out backwards;
+    transform-origin: top center;
+    animation-fill-mode: forwards;
 }
 
 @keyframes dropDown {
