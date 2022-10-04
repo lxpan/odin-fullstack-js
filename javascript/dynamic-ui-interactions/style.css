@@ -51,7 +51,8 @@ body {
 
 .expand {
     display: flex;
-    animation: dropDown 0.3s;
+    animation: dropDown 300ms ease-in-out forwards;
+    transform-origin: top center;
 }
 
 .contract {
