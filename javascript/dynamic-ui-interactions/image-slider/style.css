@@ -53,9 +53,11 @@ body {
     display: inline-block;
 }
 
-.displayed {}
+.not-selected {
+    background-color: #bbb;
+}
 
-.circle+.selected {
+.selected {
     background-color: purple;
 }
 

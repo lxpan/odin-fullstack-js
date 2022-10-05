@@ -23,7 +23,13 @@ function changeImage(e) {
     imagesArr[currentIdx].classList.toggle('displayed');
 
     if (e.target.classList.contains('circle')) {
-        e.target.classList.toggle('selected');
+        const progressCircles = Array.from(document.querySelectorAll('.circle'));
+
+        for(let i = 0; i < progressCircles.length; i++) {
+            progressCircles[i].classList.remove('selected');
+        }
+        progressCircles[currentIdx].classList.add('selected');
+        
     }
 
 }
@@ -43,9 +49,13 @@ function createProgressCircles() {
         const anchor = document.createElement('a');
         const navCircle = document.createElement('div');
         
-        navCircle.className = 'circle';
+        navCircle.classList.add('circle');
         navCircle.id = i;
         navCircle.addEventListener('click', jumpToImage);
+
+        if(i == currentIdx) {
+            navCircle.classList.add('selected');
+        }
         
         anchor.href = '#';
         anchor.appendChild(navCircle);
