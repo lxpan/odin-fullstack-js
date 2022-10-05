@@ -22,15 +22,7 @@ function changeImage(e) {
     imagesArr[currentIdx].classList.toggle('hidden');
     imagesArr[currentIdx].classList.toggle('displayed');
 
-    if (e.target.classList.contains('circle')) {
-        const progressCircles = Array.from(document.querySelectorAll('.circle'));
 
-        for(let i = 0; i < progressCircles.length; i++) {
-            progressCircles[i].classList.remove('selected');
-        }
-        progressCircles[currentIdx].classList.add('selected');
-        
-    }
 
 }
 
@@ -39,6 +31,17 @@ function createProgressCircles() {
         const navCircleImageIdx = e.target.id;
         currentIdx = navCircleImageIdx;
         changeImage(e);
+
+        // changed highlighted circle
+        const progressCircles = Array.from(document.querySelectorAll('.circle'));
+
+        for(let i = 0; i < progressCircles.length; i++) {
+            progressCircles[i].classList.remove('selected');
+        }
+        
+        progressCircles[currentIdx].classList.add('selected');
+            
+        
     }
 
     // create as many circles as there are images
