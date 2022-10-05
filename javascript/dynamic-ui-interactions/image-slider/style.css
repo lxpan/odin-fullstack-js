@@ -12,6 +12,7 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     width: 80%;
     border: solid 1px black;
+    border-radius: 12px;
 }
 
 .main {
