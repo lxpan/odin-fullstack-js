@@ -18,8 +18,16 @@ body {
     justify-content: space-evenly;
 }
 
+.slide img {
+    max-height: 300px;
+}
+
 .left-control,
 .right-control {
     display: flex;
     justify-self: center;
+}
+
+.hidden {
+    display: none;
 }
