@@ -5,27 +5,43 @@ const nextImageBtn = document.getElementById('right');
 const imagesArr = Array.from(images);
 let currentIdx = 1;
 
-function nextImage(e) {
-    const displayedImage = document.querySelector('.displayed');
-    displayedImage.classList.toggle('displayed');
-    displayedImage.classList.toggle('hidden');
+function changeImage(e) {
+    const currentlyDisplayedImage = document.querySelector('.displayed');
 
-    currentIdx = (currentIdx + 1) % imagesArr.length;
+    currentlyDisplayedImage.classList.toggle('displayed');
+    currentlyDisplayedImage.classList.toggle('hidden');
+
+    console.log(e.target.id);
+
+    if (e.target.id == 'left') {
+        currentIdx = ((currentIdx - 1) + imagesArr.length) % imagesArr.length;
+    } else {
+        currentIdx = (currentIdx + 1) % imagesArr.length;    
+    }
+
     imagesArr[currentIdx].classList.toggle('hidden');
     imagesArr[currentIdx].classList.toggle('displayed');
 }
 
-function previousImage(e) {
-    const displayedImage = document.querySelector('.displayed');
-    displayedImage.classList.toggle('displayed');
-    displayedImage.classList.toggle('hidden');
+// function nextImage(e) {
+//     const displayedImage = document.querySelector('.displayed');
+//     displayedImage.classList.toggle('displayed');
+//     displayedImage.classList.toggle('hidden');
 
-    // ((x-1) + k) % k
+//     currentIdx = (currentIdx + 1) % imagesArr.length;
+//     imagesArr[currentIdx].classList.toggle('hidden');
+//     imagesArr[currentIdx].classList.toggle('displayed');
+// }
 
-    currentIdx = ((currentIdx - 1) + imagesArr.length) % imagesArr.length;
-    imagesArr[currentIdx].classList.toggle('hidden');
-    imagesArr[currentIdx].classList.toggle('displayed');
-}
+// function previousImage(e) {
+//     const displayedImage = document.querySelector('.displayed');
+//     displayedImage.classList.toggle('displayed');
+//     displayedImage.classList.toggle('hidden');
 
-nextImageBtn.addEventListener('click', nextImage);
-previousImageBtn.addEventListener('click', previousImage);
+//     currentIdx = ((currentIdx - 1) + imagesArr.length) % imagesArr.length;
+//     imagesArr[currentIdx].classList.toggle('hidden');
+//     imagesArr[currentIdx].classList.toggle('displayed');
+// }
+
+nextImageBtn.addEventListener('click', changeImage);
+previousImageBtn.addEventListener('click', changeImage);
