@@ -23,25 +23,5 @@ function changeImage(e) {
     imagesArr[currentIdx].classList.toggle('displayed');
 }
 
-// function nextImage(e) {
-//     const displayedImage = document.querySelector('.displayed');
-//     displayedImage.classList.toggle('displayed');
-//     displayedImage.classList.toggle('hidden');
-
-//     currentIdx = (currentIdx + 1) % imagesArr.length;
-//     imagesArr[currentIdx].classList.toggle('hidden');
-//     imagesArr[currentIdx].classList.toggle('displayed');
-// }
-
-// function previousImage(e) {
-//     const displayedImage = document.querySelector('.displayed');
-//     displayedImage.classList.toggle('displayed');
-//     displayedImage.classList.toggle('hidden');
-
-//     currentIdx = ((currentIdx - 1) + imagesArr.length) % imagesArr.length;
-//     imagesArr[currentIdx].classList.toggle('hidden');
-//     imagesArr[currentIdx].classList.toggle('displayed');
-// }
-
 nextImageBtn.addEventListener('click', changeImage);
 previousImageBtn.addEventListener('click', changeImage);
