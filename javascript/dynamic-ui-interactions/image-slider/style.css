@@ -32,8 +32,8 @@ body {
 }
 
 
-.left-control,
-.right-control {
+#left-control,
+#right-control {
     justify-self: center;
     align-self: center;
 }
