@@ -23,6 +23,7 @@ function changeImage(e) {
     imagesArr[currentIdx].classList.toggle('displayed');
 
     updateProgressCircleHighlight();
+    setTimer();
 }
 
 function updateProgressCircleHighlight() {
@@ -68,7 +69,17 @@ function createProgressCircles() {
     }
 }
 
+function setTimer() {
+    clearInterval(timer);
+    timer = window.setInterval(() => nextImageBtn.click(), 5000);
+}
+
 createProgressCircles();
 
 nextImageBtn.addEventListener('click', changeImage);
 previousImageBtn.addEventListener('click', changeImage);
+
+let timer = window.setInterval(() => nextImageBtn.click(), 5000);
+
+
+
