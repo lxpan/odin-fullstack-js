@@ -13,6 +13,11 @@ body {
     border: solid 1px black;
 }
 
+.main {
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+}
+
 .slides {
     display: flex;
     justify-content: space-evenly;
@@ -31,4 +36,9 @@ body {
 .right-control {
     justify-self: center;
     align-self: center;
+}
+
+.circle {
+    clip-path: circle(5px);
+    color: purple;
 }
