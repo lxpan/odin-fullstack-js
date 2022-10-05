@@ -22,12 +22,13 @@ body {
     max-height: 300px;
 }
 
-.left-control,
-.right-control {
-    display: flex;
-    justify-self: center;
-}
-
 .hidden {
     display: none;
+}
+
+
+.left-control,
+.right-control {
+    justify-self: center;
+    align-self: center;
 }
