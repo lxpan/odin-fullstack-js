@@ -84,5 +84,5 @@ setupInputValidation('password-confirmation');
 
 
 form.addEventListener('submit', (e) => {
-    form.preventDefault();
+    e.preventDefault();
 });
