@@ -68,11 +68,21 @@ function setupInputValidation(elementId) {
     }
 
     const detectPasswordConfirmationError = () => {
-        const inputToValidate = document.getElementById('password').value;
-
-        if (inputElement.value != inputToValidate) {
-            errorSpan.textContent = 'Passwords must match.';
+        if (!inputElement.validity.valid) {
+            errorSpan.textContent = 'Passwords must match.';    
         }
+    }   
+}
+
+const checkPasswordsMatch = (e) => {
+    const input = document.getElementById('password-confirmation');
+    const inputToValidate = document.getElementById('password').value;
+
+    if (input.value != inputToValidate) {
+        input.setCustomValidity('Passwords must match.');
+        console.log(input.checkValidity());
+    } else {
+        input.setCustomValidity('');
     }
 }
 
@@ -80,8 +90,11 @@ setupInputValidation('mail');
 setupInputValidation('country');
 setupInputValidation('postcode');
 setupInputValidation('password');
-setupInputValidation('password-confirmation');
 
+const passwordConf = document.getElementById('password-confirmation');
+passwordConf.addEventListener('input', checkPasswordsMatch);
+
+setupInputValidation('password-confirmation');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
