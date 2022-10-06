@@ -14,18 +14,20 @@ function setupInputValidation(elementId) {
     });
 
     function showError() {
-        switch(inputElement.type) {
-            case 'email':
+        switch(inputElement.id) {
+            case 'mail':
                 detectEmailError();
                 break;
-            case 'text':
+            case 'country':
                 detectCountryError();
                 break;
-            case 'tel':
+            case 'postcode':
                 detectPostCodeError();
                 break;
             case 'password':
                 detectPasswordError();
+                break;
+            case 'password-confirmation':
                 break;
         }
 
@@ -59,7 +61,6 @@ function setupInputValidation(elementId) {
     }
 
     const detectPasswordError = () => {
-        console.log('detect password error');
         if (inputElement.validity.patternMismatch) {
             errorSpan.textContent = 'Password must contain a minimum of eight characters, and at least one letter and one number';
         }
