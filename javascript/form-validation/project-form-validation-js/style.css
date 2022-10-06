@@ -21,8 +21,8 @@ input[type="email"] {
 
 /* This is our style for the invalid fields */
 input:invalid {
-    border-color: #900;
-    background-color: #fdd;
+    border-color: orangered;
+    background-color: orange;
 }
 
 input:focus:invalid {
@@ -36,7 +36,7 @@ input:focus:invalid {
 
     font-size: 80%;
     color: white;
-    background-color: #900;
+    background-color: orangered;
     border-radius: 0 0 5px 5px;
 
     box-sizing: border-box;
