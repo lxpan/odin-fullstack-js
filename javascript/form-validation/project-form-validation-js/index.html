@@ -35,14 +35,14 @@
         <p>
             <label for="password">
                 <span>Password:</span>
-                <input type="password" id="password" name="password" />
+                <input type="password" id="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/>
                 <span class="error" aria-live="polite"></span>
             </label>
         </p>
         <p>
             <label for="password-confirmation">
                 <span>Password confirmation:</span>
-                <input type="password" id="password-confirmation" name="password-confirmation" />
+                <input type="password" id="password-confirmation" name="password-confirmation" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
                 <span class="error" aria-live="polite"></span>
             </label>
         </p>

@@ -24,6 +24,9 @@ function setupInputValidation(elementId) {
             case 'tel':
                 detectPostCodeError();
                 break;
+            case 'password':
+                detectPasswordError();
+                break;
         }
 
         errorSpan.className = "error active";
@@ -50,9 +53,15 @@ function setupInputValidation(elementId) {
     }
 
     const detectPostCodeError = () => {
-        console.log('detect postcode error');
         if (inputElement.validity.patternMismatch) {
             errorSpan.textContent = 'Must contain a four digit numerical postcode.';
+        }
+    }
+
+    const detectPasswordError = () => {
+        console.log('detect password error');
+        if (inputElement.validity.patternMismatch) {
+            errorSpan.textContent = 'Password must contain a minimum of eight characters, and at least one letter and one number';
         }
     }
 }
@@ -60,6 +69,8 @@ function setupInputValidation(elementId) {
 setupInputValidation('mail');
 setupInputValidation('country');
 setupInputValidation('postcode');
+setupInputValidation('password');
+setupInputValidation('password-confirmation');
 
 
 form.addEventListener('submit', (e) => {
