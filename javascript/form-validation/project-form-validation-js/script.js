@@ -21,6 +21,9 @@ function setupInputValidation(elementId) {
             case 'text':
                 detectCountryError();
                 break;
+            case 'tel':
+                detectPostCodeError();
+                break;
         }
 
         errorSpan.className = "error active";
@@ -45,10 +48,18 @@ function setupInputValidation(elementId) {
             errorSpan.textContent = 'Country names can only contain letters';
         }
     }
+
+    const detectPostCodeError = () => {
+        console.log('detect postcode error');
+        if (inputElement.validity.patternMismatch) {
+            errorSpan.textContent = 'Must contain a four digit numerical postcode.';
+        }
+    }
 }
 
 setupInputValidation('mail');
 setupInputValidation('country');
+setupInputValidation('postcode');
 
 
 form.addEventListener('submit', (e) => {
