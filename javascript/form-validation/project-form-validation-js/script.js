@@ -28,6 +28,7 @@ function setupInputValidation(elementId) {
                 detectPasswordError();
                 break;
             case 'password-confirmation':
+                detectPasswordConfirmationError();
                 break;
         }
 
@@ -63,6 +64,14 @@ function setupInputValidation(elementId) {
     const detectPasswordError = () => {
         if (inputElement.validity.patternMismatch) {
             errorSpan.textContent = 'Password must contain a minimum of eight characters, and at least one letter and one number';
+        }
+    }
+
+    const detectPasswordConfirmationError = () => {
+        const inputToValidate = document.getElementById('password').value;
+
+        if (inputElement.value != inputToValidate) {
+            errorSpan.textContent = 'Passwords must match.';
         }
     }
 }
