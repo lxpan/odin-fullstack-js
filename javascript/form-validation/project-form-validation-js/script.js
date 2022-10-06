@@ -13,6 +13,19 @@ function setupInputValidation(elementId) {
         }
     });
 
+    function showError() {
+        switch(inputElement.type) {
+            case 'email':
+                detectEmailError();
+                break;
+            case 'text':
+                detectCountryError();
+                break;
+        }
+
+        errorSpan.className = "error active";
+    }
+
     const detectEmailError = () => {
         if (inputElement.validity.valueMissing) {
             errorSpan.textContent = 'You will need to enter an email address.';
@@ -28,27 +41,9 @@ function setupInputValidation(elementId) {
     }
 
     const detectCountryError = () => {
-        console.log("check country error");
-        // let allLettersPattern = /^[a-zA-Z]*$/;
-        // if (!inputElement.value.match(allLettersPattern)) {
-        //     errorSpan.textContent = 'Country names can only contain letters.';
-        // }
         if (inputElement.validity.patternMismatch) {
             errorSpan.textContent = 'Country names can only contain letters';
         }
-    }
-
-    function showError() {
-        switch(inputElement.type) {
-            case 'email':
-                detectEmailError();
-                break;
-            case 'text':
-                detectCountryError();
-                break;
-        }
-
-        errorSpan.className = "error active";
     }
 }
 
