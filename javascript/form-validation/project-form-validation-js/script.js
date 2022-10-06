@@ -1,32 +1,61 @@
 const form = document.querySelector("form");
-const email = document.getElementById("mail");
-const emailError = document.querySelector("#mail + span.error");
 
-email.addEventListener('input', (e) => {
-    if (email.validity.valid) {
-        emailError.textContent = '';
-        emailError.className = 'error';
-    } else {
-        showError();
+function setupInputValidation(elementId) {
+    const inputElement = document.getElementById(elementId);
+    const errorSpan = document.querySelector(`#${elementId} + span.error`);
+
+    inputElement.addEventListener('input', (e) => {
+        if (inputElement.validity.valid) {
+            errorSpan.textContent = '';
+            errorSpan.className = 'error';
+        } else {
+            showError();
+        }
+    });
+
+    const detectEmailError = () => {
+        if (inputElement.validity.valueMissing) {
+            errorSpan.textContent = 'You will need to enter an email address.';
+        } else if (inputElement.validity.typeMismatch) {
+            // If the field doesn't contain an email address,
+            // display the following error message.
+            errorSpan.textContent = "Entered value needs to be an e-mail address.";
+        } else if (inputElement.validity.tooShort) {
+            // If the data is too short,
+            // display the following error message.
+            errorSpan.textContent = `Email should be at least ${inputElement.minLength} characters; you entered ${inputElement.value.length}.`;
+        }
     }
-});
+
+    const detectCountryError = () => {
+        console.log("check country error");
+        // let allLettersPattern = /^[a-zA-Z]*$/;
+        // if (!inputElement.value.match(allLettersPattern)) {
+        //     errorSpan.textContent = 'Country names can only contain letters.';
+        // }
+        if (inputElement.validity.patternMismatch) {
+            errorSpan.textContent = 'Country names can only contain letters';
+        }
+    }
+
+    function showError() {
+        switch(inputElement.type) {
+            case 'email':
+                detectEmailError();
+                break;
+            case 'text':
+                detectCountryError();
+                break;
+        }
+
+        errorSpan.className = "error active";
+    }
+}
+
+setupInputValidation('mail');
+setupInputValidation('country');
+
 
 form.addEventListener('submit', (e) => {
     form.preventDefault();
 });
-
-function showError() {
-    if (email.validity.valueMissing) {
-        emailError.textContent = 'You will need to enter an email address.';
-    } else if (email.validity.typeMismatch) {
-        // If the field doesn't contain an email address,
-        // display the following error message.
-        emailError.textContent = "Entered value needs to be an e-mail address.";
-    } else if (email.validity.tooShort) {
-        // If the data is too short,
-        // display the following error message.
-        emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
-    }
-
-    emailError.className = "error active";
-}
