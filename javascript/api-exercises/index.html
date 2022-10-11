@@ -11,7 +11,7 @@
     <label for="searchBox">Enter Search Term</label>
     <input type="text" id="searchBox">
     <button id="getNewImgBtn">Get New Image</button>
-    
+
     <script>
         const img = document.querySelector('img');
         const API_KEY = 'mw5gTjY5uE3YqPuNVA0kq9Q1QK2SuP5H';
@@ -20,13 +20,13 @@
 
             const searchBox = document.getElementById('searchBox');
             const searchTerm = searchBox.value;
-            
+
             fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${(searchTerm) ? searchTerm : evt.currentTarget.searchTerm}`, { mode: 'cors' })
-            .then((response) => response.json())
-            .then((response) => img.src = response.data.images.original.url)
-            .catch((error) => {
-                console.error(`No images found with search term: ${evt.currentTarget.searchTerm}`);
-            });
+                .then((response) => response.json())
+                .then((response) => img.src = response.data.images.original.url)
+                .catch((error) => {
+                    console.error(`No images found with search term: ${evt.currentTarget.searchTerm}`);
+                });
         }
 
         const newImgBtn = document.getElementById('getNewImgBtn');
