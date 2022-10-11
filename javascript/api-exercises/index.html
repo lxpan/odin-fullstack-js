@@ -21,7 +21,7 @@
             const searchBox = document.getElementById('searchBox');
             const searchTerm = searchBox.value;
 
-            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${(searchTerm) ? defaultSearchTerm : evt.currentTarget.searchTerm}`, { mode: 'cors' })
+            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${(searchTerm) ? searchTerm : evt.currentTarget.defaultSearchTerm}`, { mode: 'cors' })
                 .then((response) => response.json())
                 .then((response) => img.src = response.data.images.original.url)
                 .catch((error) => {
@@ -31,7 +31,7 @@
 
         const newImgBtn = document.getElementById('getNewImgBtn');
         newImgBtn.addEventListener('click', fetchNewImage, false);
-        newImgBtn.defaultSearchTerm = 'koalas';
+        newImgBtn.defaultSearchTerm = 'dogs';
 
         newImgBtn.click();
     </script>
