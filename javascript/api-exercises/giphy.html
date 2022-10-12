@@ -16,23 +16,24 @@
         const img = document.querySelector('img');
         const API_KEY = 'mw5gTjY5uE3YqPuNVA0kq9Q1QK2SuP5H';
 
-        function fetchNewImage(evt) {
+        async function fetchNewImage(evt) {
 
             const searchBox = document.getElementById('searchBox');
             const searchTerm = searchBox.value;
 
-            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${(searchTerm) ? searchTerm : evt.currentTarget.defaultSearchTerm}`, { mode: 'cors' })
-                .then((response) => response.json())
-                .then((response) => img.src = response.data.images.original.url)
-                .catch((error) => {
-                    console.error(`No images found with search term: ${evt.currentTarget.searchTerm}`);
-                });
+            try {
+                const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${(searchTerm) ? searchTerm : evt.currentTarget.defaultSearchTerm}`, { mode: 'cors' });
+                const animalData = await response.json();
+                img.src = animalData.data.images.original.url;
+            }
+            catch (error) {
+                console.error(`No images found with search term: ${searchTerm}`);
+            }
         }
 
         const newImgBtn = document.getElementById('getNewImgBtn');
         newImgBtn.addEventListener('click', fetchNewImage, false);
         newImgBtn.defaultSearchTerm = 'dogs';
-
         newImgBtn.click();
     </script>
 
