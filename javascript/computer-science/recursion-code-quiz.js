@@ -60,3 +60,22 @@ function all(numArray, callback, idx = 0) {
 // });
 
 // console.log(allAreLessThanSeven); // false
+
+// *******************************
+// Question 5: Product of an array
+// Write a function called productOfArray which takes in an array of numbers and returns the product of them all
+function productOfArray(arrayNum, idx = 0) {
+    if (idx > arrayNum.length - 1) return 1;
+
+    return arrayNum[idx] * productOfArray(arrayNum, idx + 1);
+}
+
+function productOfArrayShift(arrayNum) {
+    if (arrayNum.length === 0) return 1;
+
+    return arrayNum.shift() * productOfArrayShift(arrayNum);
+}
+
+let numbers = [2, 3, 3, 3, 1];
+// console.log(productOfArray(numbers));
+console.log(productOfArrayShift(numbers));
