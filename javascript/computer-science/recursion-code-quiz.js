@@ -76,6 +76,43 @@ function productOfArrayShift(arrayNum) {
     return arrayNum.shift() * productOfArrayShift(arrayNum);
 }
 
-let numbers = [2, 3, 3, 3, 1];
+// let numbers = [2, 3, 3, 3, 1];
 // console.log(productOfArray(numbers));
-console.log(productOfArrayShift(numbers));
+// console.log(productOfArrayShift(numbers));
+
+// ****************************
+// Question 6: Search JS object
+// Write a function called contains that searches for a value in a nested object. It returns true if the object 
+// contains that value.
+let nestedObject = {
+    data: {
+        info: {
+            stuff: {
+                thing: {
+                    moreStuff: {
+                        magicNumber: 44,
+                        something: 'foo2',
+                        truthy: true
+                    }
+                }
+            }
+        }
+    }
+}
+
+function contains(nestedObj, target) {
+    for (const property in nestedObj) {
+        // console.log(nestedObj[property]);
+        if (typeof nestedObj[property] === 'object') {
+            return contains(nestedObj[property], target)
+        }
+
+        if (nestedObj[property] == target) {
+            return true;
+        }
+    }
+    return false;
+}
+
+let doesItContain44 = contains(nestedObject, true);
+console.log(doesItContain44);
