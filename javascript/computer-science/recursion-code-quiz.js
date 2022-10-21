@@ -32,7 +32,7 @@ function power(base, exponent) {
 
 // **************************
 // Question 3: Calculate factorial
-// Write a function that returns the factorial of a number. As a quick refresher, a factorial of a number is the result of that number 
+// Write a function that returns the factorial of a number. As a quick refresher, a factorial of a number is the result of that number
 // multiplied by the number before it, and the number before that number, and so on, until you reach 1. The factorial of 1 is just 1.
 function factorial(n) {
     if (n == 1) return 1;
@@ -44,7 +44,7 @@ function factorial(n) {
 
 // **************************
 // Question 4: Check all values in an array
-// Write a function called all which accepts an array and a callback and returns true if every value in the array 
+// Write a function called all which accepts an array and a callback and returns true if every value in the array
 // returns true when passed as parameter to the callback function
 function all(numArray, callback, idx = 0) {
     // if we've made it to the end, then all must be true
@@ -82,7 +82,7 @@ function productOfArrayShift(arrayNum) {
 
 // ****************************
 // Question 6: Search JS object
-// Write a function called contains that searches for a value in a nested object. It returns true if the object 
+// Write a function called contains that searches for a value in a nested object. It returns true if the object
 // contains that value.
 let nestedObject = {
     data: {
@@ -91,20 +91,20 @@ let nestedObject = {
                 thing: {
                     moreStuff: {
                         magicNumber: 44,
-                        something: 'foo2',
-                        truthy: true
-                    }
-                }
-            }
-        }
-    }
-}
+                        something: "foo2",
+                        truthy: true,
+                    },
+                },
+            },
+        },
+    },
+};
 
 function contains(nestedObj, target) {
     for (const property in nestedObj) {
         // console.log(nestedObj[property]);
-        if (typeof nestedObj[property] === 'object') {
-            return contains(nestedObj[property], target)
+        if (typeof nestedObj[property] === "object") {
+            return contains(nestedObj[property], target);
         }
 
         if (nestedObj[property] == target) {
@@ -114,5 +114,28 @@ function contains(nestedObj, target) {
     return false;
 }
 
-let doesItContain44 = contains(nestedObject, true);
-console.log(doesItContain44);
+// let doesItContain44 = contains(nestedObject, true);
+// console.log(doesItContain44);
+
+// *******************************************
+// Question 7: Parse a multi-dimensional array
+// Given a multi-dimensional integer array, return the total number of integers stored inside this array
+function totalIntegers(mdArray) {
+    if (mdArray.length === 0) return 0;
+
+    let total = 0;
+    let first = mdArray.shift();
+    console.log(`first: ${first}`);
+
+    if (Array.isArray(first)) {
+        total += totalIntegers(first);
+    }
+    else if (Number.isInteger(first)) {
+        total += 1;
+    }
+
+    return total + totalIntegers(mdArray);
+}
+
+// let seven = totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
+// console.log(seven);
