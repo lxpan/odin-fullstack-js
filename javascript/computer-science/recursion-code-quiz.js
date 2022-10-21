@@ -157,13 +157,25 @@ function sumSquares(array) {
     return sum + sumSquares(array);
 }
 
-let l = [1, 2, 3]; // 1 + 4 + 9 = 14
-l = [[1,2],3]; 
-l = [[[[[[[[[1]]]]]]]]]
-l = [10,[[10],10],[10]] 
+// let l = [1, 2, 3]; // 1 + 4 + 9 = 14
+// l = [[1,2],3]; 
+// l = [[[[[[[[[1]]]]]]]]]
+// l = [10,[[10],10],[10]] 
 
-console.log(sumSquares(l));
+// console.log(sumSquares(l));
 
 // f = 1, sum = 1, return 1 + sumSquares([2, 3]); 1 + 4 + 9 + 0
     // f = 2, sum = 4, return 4 + sumSquares([3]); 4 + 9 + 0
         // f = 3., sum = 9, return 9 + sumSquares([]);
+
+// Question 9:
+// The function should return an array containing repetitions of the number argument. For instance, replicate(3, 5) should return [5,5,5]. If the times argument 
+// is negative, return an empty array.
+function replicate(repetitions, number) {
+    if (repetitions === 0) return [];
+    // console.log(`Repetitions: ${repetitions}`);
+    
+    return [number].concat(replicate(repetitions - 1, number));
+}
+
+console.log(replicate(3, 5));
