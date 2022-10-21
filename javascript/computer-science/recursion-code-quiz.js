@@ -139,3 +139,31 @@ function totalIntegers(mdArray) {
 
 // let seven = totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
 // console.log(seven);
+
+// Question 8:
+// Write a function that sums squares of numbers in list that may contain more lists
+function sumSquares(array) {
+    if (array.length === 0) return 0;
+
+    let sum = 0;
+    let first = array.shift(); // 1
+
+    if (Array.isArray(first)) {
+        sum += sumSquares(first);
+    }
+    else if (typeof first == 'number') {
+        sum =+ first * first;
+    }
+    return sum + sumSquares(array);
+}
+
+let l = [1, 2, 3]; // 1 + 4 + 9 = 14
+l = [[1,2],3]; 
+l = [[[[[[[[[1]]]]]]]]]
+l = [10,[[10],10],[10]] 
+
+console.log(sumSquares(l));
+
+// f = 1, sum = 1, return 1 + sumSquares([2, 3]); 1 + 4 + 9 + 0
+    // f = 2, sum = 4, return 4 + sumSquares([3]); 4 + 9 + 0
+        // f = 3., sum = 9, return 9 + sumSquares([]);
